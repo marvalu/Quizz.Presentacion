@@ -19,6 +19,8 @@ namespace Quizz.Presentacion
             InitializeComponent();
         }
         LogicaProyecto logicaproyecto = new LogicaProyecto();
+        operacionesCorreo operacionesCorreo = new operacionesCorreo();
+
 
 
         public void MostrarTodo() {
@@ -26,7 +28,7 @@ namespace Quizz.Presentacion
 
 
             dataGridView1.AutoGenerateColumns = true;
-            dataGridView1.DataSource = logicaproyecto.mostrar();
+            dataGridView1.DataSource = operacionesCorreo.MostrarTodo();
             dataGridView1.Refresh();
         }
         private void button1_Click(object sender, EventArgs e)
@@ -56,11 +58,25 @@ namespace Quizz.Presentacion
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {
-            Direcciones direcciones = new Direcciones(int.Parse(IDText.Text), PaisText.Text, ProvinciaText.Text, DistritoText.Text, Detalles1Text.Text, Detalles2Text.Text, int.Parse(TelFijoText.Text));
 
-           logicaproyecto.modificar(direcciones);
-            MostrarTodo();
+
+
+        {
+
+            try
+            {
+                Direcciones direcciones = new Direcciones(int.Parse(IDText.Text), PaisText.Text, ProvinciaText.Text, DistritoText.Text, Detalles1Text.Text, Detalles2Text.Text, int.Parse(TelFijoText.Text));
+
+                logicaproyecto.modificar(direcciones);
+                MostrarTodo();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("El id ingresado no era valido");
+                MostrarTodo();
+            }
+           
         }
 
         private void eliminar_Click(object sender, EventArgs e)

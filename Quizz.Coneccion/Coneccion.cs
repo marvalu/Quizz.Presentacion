@@ -11,7 +11,7 @@ namespace Quizz.AccesoDatos
 
     public class Coneccion
     {
-        private string connectionString = @"Data Source=VALVERMA4\SQLEXPRESS;Initial Catalog=Quizz;User ID=progra3;Password=123456";
+        private string connectionString = @"Data Source=VALVERMA4\SQLEXPRESS;Initial Catalog=Quiz;User ID=Progra3;Password=123456";
         
         private SqlConnection cnn;
 

@@ -49,6 +49,10 @@
       <Project>{d5c30ef9-5d42-4ecf-be49-8a55d49292d8}</Project>
       <Name>Quizz.AccesoDatos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Quizz.Entidades\Quizz.Entidades.csproj">
+      <Project>{a65ca0b1-522a-469a-8f4b-25e12fe43830}</Project>
+      <Name>Quizz.Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

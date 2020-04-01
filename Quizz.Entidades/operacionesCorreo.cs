@@ -14,7 +14,7 @@ namespace Quizz.Entidades
     public class operacionesCorreo : IOperaciones<Direcciones>
     {
 
-        Coneccion coneccion = new Coneccion();
+      Coneccion coneccion = new Coneccion();
 
 
 
@@ -22,7 +22,7 @@ namespace Quizz.Entidades
 
         public Direcciones Buscar(int id)
         {
-            string Sqlstring = string.Format("select * from Persona where id={0}", id);
+            string Sqlstring = string.Format("select * from correo where id={0}", id);
 
 
             SqlDataReader SQLTemporal = coneccion.QueryUsing(Sqlstring);
@@ -54,17 +54,24 @@ namespace Quizz.Entidades
 
         public void Insertar(Direcciones item)
         {
-            string Sqlstring = string.Format("INSERT INTO[dbo].[correo]([Pais],[Provicia],[Detalles1],[Detalles2],[TelefonoFijo]) VALUES ('{0}','{1}','{2}','{3}','{4}')", item.Pais1, item.Provincia1, item.Detalles11,item.Detalles21,item.TelefonoFijo1);
+            string Sqlstring = string.Format("INSERT INTO[dbo].[correo]([id],[pais],[provicia],[detalles1],[detalles2],[telefono]) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}')", item.ID,item.Pais, item.Provincia, item.Detalles1,item.Detalles2,item.TelefonoFijo);
             coneccion.nonQueryUsing(Sqlstring);
         }
 
         public void Modificar(Direcciones item)
 
-            // posible error despues de prbar validar
+            
 
         {
-            string Sqlstring = string.Format("UPDATE INTO[dbo].[correo]([Pais],[Provicia],[Detalles1],[Detalles2],[TelefonoFijo]) VALUES ('{0}','{1}','{2}','{3}','{4}')", item.Pais1, item.Provincia1, item.Detalles11, item.Detalles21, item.TelefonoFijo1);
+            string Sqlstring = string.Format("UPDATE[dbo].[correo]([id],[pais],[provicia],[detalles1],[detalles2],[telefono]) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}')", item.ID, item.Pais, item.Provincia, item.Detalles1, item.Detalles2, item.TelefonoFijo);
             coneccion.nonQueryUsing(Sqlstring);
+        }
+
+        public SqlDataReader MostrarTodo()
+        {
+
+            string SQLstring = string.Format("select * from [dbo].[correo]");
+            return coneccion.QueryUsing(SQLstring);
         }
     }
 }

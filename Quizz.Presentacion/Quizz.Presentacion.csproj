@@ -80,6 +80,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Quizz.Entidades\Quizz.Entidades.csproj">
+      <Project>{a65ca0b1-522a-469a-8f4b-25e12fe43830}</Project>
+      <Name>Quizz.Entidades</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Quizz.Logica\Quizz.Logica.csproj">
       <Project>{030f98f6-5a45-4f28-b55d-6f147d99b1f1}</Project>
       <Name>Quizz.Logica</Name>

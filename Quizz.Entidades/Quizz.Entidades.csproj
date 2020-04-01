@@ -51,14 +51,6 @@
       <Project>{d5c30ef9-5d42-4ecf-be49-8a55d49292d8}</Project>
       <Name>Quizz.AccesoDatos</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Quizz.Logica\Quizz.Logica.csproj">
-      <Project>{030f98f6-5a45-4f28-b55d-6f147d99b1f1}</Project>
-      <Name>Quizz.Logica</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Quizz.Presentacion\Quizz.Presentacion.csproj">
-      <Project>{43c97681-4934-45c9-8e0b-b6db29f8be64}</Project>
-      <Name>Quizz.Presentacion</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
